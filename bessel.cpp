@@ -13,7 +13,7 @@ double up(double x, int n);		 	// upward algorithm
 
 int main(int argc, char* argv[]){
   const double xmax=40.0;                     // max of x 
-  const double xmin=0.25;                     // min of x >0  
+  const double xmin=0.1;                     // min of x>0  
   const double step=0.1;                      // delta x 
 
   int order=0;                                // order of Bessel function 
@@ -27,7 +27,7 @@ int main(int argc, char* argv[]){
   fprintf(out, "#Calculating J%d(x) for %f <= x < %f\n",order,xmin,xmax);
   fprintf(out,"# x\t\t J%d(x) [down]\t J%d(x) [up]\n",order,order);
   for(double x=xmin; x<=xmax+step/2; x+=step) {  
-    fprintf(out, "%f\t%f\t%f\n", x, down(x,order), up(x,order));
+    fprintf(out, "%f\t%e\t%e\n", x, down(x,order), up(x,order));
   }
   printf("data stored in %s\n",outfile);
   fclose(out);
