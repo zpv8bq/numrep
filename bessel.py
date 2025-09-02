@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# implementation of up/down recursion calculations for Bessel functions
+# Usage: bessel <order>
 
 from math import sin,cos
 
